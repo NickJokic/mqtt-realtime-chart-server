@@ -2,7 +2,7 @@
 
 This project demonstrates the visualization of high-frequency data streams (50Hz+) with Rickshaw.js chart library! 
 
-"mqtt-realtime-chart-server" is a **Express.js - MQTT - Socket.io** application, which works in conjunction with [mqtt-realtime-chart-client](https://github.com/NickJokic/mqtt-realtime-chart-client).
+**mqtt-realtime-chart-server** is a **Express.js - MQTT - Socket.io** application, which works in conjunction with [mqtt-realtime-chart-client](https://github.com/NickJokic/mqtt-realtime-chart-client).
 
 
 ![Alt Text](https://raw.githubusercontent.com/NickJokic/mqtt-realtime-chart-server/master/static/mqtt-realtime-chart.gif)
