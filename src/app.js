@@ -10,7 +10,6 @@ const express = require('express'),
     server = require('http').createServer(app),
     io = require('socket.io').listen(server);
 
-var messageIndex = 0;
 var streamInterval;
 var msFrequency = 20;
 
@@ -35,7 +34,7 @@ Message event fires, when new messages
 arrive on the subscribed topic
 */
 mqttClient.on('message', function (topic, message) {
-    console.log('Received: ' + message.toString() + ' from topic: ' + topic.toString());
+    /* console.log('Received: ' + message.toString() + ' from topic: ' + topic.toString()); */
     let parsedMessage = JSON.parse(message);
     io.emit('voltageData', parsedMessage);
 })
@@ -51,10 +50,6 @@ function startStreamSimulation() {
 
     streamInterval = setInterval(function () {
 
-        if (messageIndex == 50) {
-            messageIndex = 0;
-        }
-
         /* Prepare random data */
         v1 = returnRandomFloat(231, 231.1);
         v2 = returnRandomFloat(235, 235.3);
@@ -67,7 +62,6 @@ function startStreamSimulation() {
             'v3': v3
         }));
 
-        messageIndex++;
 
     }, msFrequency);
 }
@@ -89,7 +83,7 @@ app.get('/', function (req, res) {
     res.send(
     [{
             title: "Hi, I'm the express server!",
-            description: "Start Moquette and the client application, to see the action!"
+            description: "Start Moquette and the client application to see the action!"
     }]
     )
 });
