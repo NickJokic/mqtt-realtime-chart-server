@@ -31,7 +31,7 @@ Before you run the client, be sure you have these downloaded/installed on your m
 + npm
 + [mqtt-realtime-chart-client](https://github.com/NickJokic/mqtt-realtime-chart-client)
 + [Moquette (MQTT broker)](https://github.com/andsel/moquette) (or any other MQTT broker that listens on port 1883)
-
+    + If using Moquette, be sure to have Java JDK installed (tested with JDK 8)
 
 ### Installing
 
